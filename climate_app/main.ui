@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>670</width>
-    <height>492</height>
+    <width>692</width>
+    <height>591</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -86,22 +86,44 @@
       </layout>
      </widget>
      <widget class="QWidget" name="page_2">
-      <layout class="QVBoxLayout" name="verticalLayout_3">
+      <layout class="QHBoxLayout" name="horizontalLayout_7">
        <item>
-        <widget class="QTabWidget" name="tabWidget">
+        <widget class="QTabWidget" name="Info_Widget">
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
          <property name="currentIndex">
           <number>0</number>
          </property>
-         <widget class="QWidget" name="tab">
+         <widget class="QWidget" name="tab_2">
           <attribute name="title">
-           <string>Tab 1</string>
+           <string>Мониторинг</string>
           </attribute>
           <layout class="QHBoxLayout" name="horizontalLayout_4">
            <item>
-            <widget class="QPushButton" name="btn_get_weather">
-             <property name="text">
-              <string>Получить текущую погоду</string>
+            <widget class="QWidget" name="widget" native="true">
+             <property name="maximumSize">
+              <size>
+               <width>250</width>
+               <height>16777215</height>
+              </size>
              </property>
+             <layout class="QVBoxLayout" name="verticalLayout_16">
+              <item>
+               <widget class="QLineEdit" name="lineEdit_2">
+                <property name="placeholderText">
+                 <string>Город</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_get_weather">
+                <property name="text">
+                 <string>Получить текущую погоду</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
             </widget>
            </item>
            <item>
@@ -113,10 +135,282 @@
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="tab_2">
+         <widget class="QWidget" name="tab_5">
           <attribute name="title">
-           <string>Tab 2</string>
+           <string>Загрузка данных</string>
           </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QFrame" name="frame_2">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_9">
+              <item alignment="Qt::AlignHCenter|Qt::AlignTop">
+               <widget class="QLabel" name="label_2">
+                <property name="font">
+                 <font>
+                  <pointsize>14</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Работа с файлами</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="frame">
+             <property name="minimumSize">
+              <size>
+               <width>500</width>
+               <height>140</height>
+              </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_6">
+              <item>
+               <widget class="QFrame" name="frame_6">
+                <property name="minimumSize">
+                 <size>
+                  <width>260</width>
+                  <height>60</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>80</height>
+                 </size>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_10">
+                 <item alignment="Qt::AlignBottom">
+                  <widget class="QLabel" name="label_3">
+                   <property name="text">
+                    <string>Ссылка</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="sourceEdit_2">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>480</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="frame_7">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_11">
+                 <item alignment="Qt::AlignHCenter">
+                  <widget class="QPushButton" name="btn_load_source_file_2">
+                   <property name="minimumSize">
+                    <size>
+                     <width>200</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="text">
+                    <string>Загрузить ссылку</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_4">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Minimum</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>10</width>
+                     <height>3</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item alignment="Qt::AlignHCenter">
+                  <widget class="QPushButton" name="btn_load_local_file_2">
+                   <property name="minimumSize">
+                    <size>
+                     <width>200</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>300</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="text">
+                    <string>Загрузить файл (CSV, XLSX)</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="frame_3">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>100</height>
+              </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_8">
+              <item alignment="Qt::AlignVCenter">
+               <widget class="QPushButton" name="btn_visual_2">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>13</pointsize>
+                 </font>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="text">
+                 <string>Визуализация</string>
+                </property>
+               </widget>
+              </item>
+              <item alignment="Qt::AlignHCenter|Qt::AlignBottom">
+               <widget class="QLabel" name="error_label_2">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Выберите файлы или вставьте ссылку для загрузки</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab">
+          <attribute name="title">
+           <string>Визуализация</string>
+          </attribute>
+         </widget>
+         <widget class="QWidget" name="tab_3">
+          <attribute name="title">
+           <string>Прогнозирование</string>
+          </attribute>
+         </widget>
+         <widget class="QWidget" name="tab_4">
+          <attribute name="title">
+           <string>Анализ</string>
+          </attribute>
+          <widget class="QLineEdit" name="lineEdit">
+           <property name="geometry">
+            <rect>
+             <x>200</x>
+             <y>210</y>
+             <width>113</width>
+             <height>20</height>
+            </rect>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="tab_1">
+          <attribute name="title">
+           <string>Информация</string>
+          </attribute>
+          <widget class="QLabel" name="label_4">
+           <property name="geometry">
+            <rect>
+             <x>9</x>
+             <y>9</y>
+             <width>600</width>
+             <height>25</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>9</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Добро пожаловать! В этом приложении все разделы расположены в навигации сверху.</string>
+           </property>
+          </widget>
          </widget>
         </widget>
        </item>
