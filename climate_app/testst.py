@@ -24,9 +24,9 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
     def get_weather(self):
         stats = get_weather()
 
-        self.label_weather.setText(f"{stats['temp']} °C\n"
-                                   f"{stats['humidity']} %\n"
-                                   f"{stats['state']}")
+        self.label_weather.setText(f"Макс. темп: {round(stats[0] - 273)} \n"
+                                   f"Мин. темп: {round(stats[1] - 273)}")
+
 
 
 if __name__ == '__main__':
