@@ -16,13 +16,14 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
 
         self.btn_login.clicked.connect(self.on_login)
 
-        self.btn_get_weather.clicked.connect(self.get_weather)
+        self.btn_get_weather.clicked.connect(self.on_get_weather_press)
 
     def on_login(self):
         self.stackedWidget.setCurrentIndex(1)
 
-    def get_weather(self):
-        stats = get_weather()
+    def on_get_weather_press(self):
+        town = self.lineEdit_town.text()
+        stats = get_weather(town)
         wind = stats['wind']
         clouds = stats['weather'][0]['description']
         prime = stats['main']

@@ -1,4 +1,5 @@
-def get_weather():
+def get_weather(town):
+
     import requests
 
 #  Пример словаря данных {'coord': {'lon': 37.6156, 'lat': 55.7522}, 'weather': [{'id': 804, 'main': 'Clouds',
@@ -13,7 +14,7 @@ def get_weather():
 
     # Замените YOUR_API_KEY на ваш API ключ OpenWeatherMap
     API_KEY = 'bd5e378503939ddaee76f12ad7a97608'
-    CITY_NAME = 'Москва'
+    CITY_NAME = town
 
     # Формируем URL для запроса
     url = f'http://api.openweathermap.org/data/2.5/weather?q={CITY_NAME}&appid={API_KEY}&lang=ru'
@@ -25,5 +26,3 @@ def get_weather():
     # Извлекаем данные о погоде
     # Выводим данные о погоде
     return data
-
-print(get_weather())
