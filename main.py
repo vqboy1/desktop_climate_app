@@ -30,12 +30,15 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
             clouds = stats['weather'][0]['description']
             prime = stats['main']
             pressure = prime['pressure']
-            max_temp = prime['temp_max']  # temp
-            min_temp = prime['temp_min']  # temp
-            self.label_weather.setText(f"Макс. темп: {round(min_temp - 273)} \n"
-                                       f"Мин. темп: {round(max_temp - 273)} \n"
+            max_temp = prime['temp_max']
+            min_temp = prime['temp_min']
+            humidity = prime['humidity']
+            self.label_weather.setText(f"Город {stats['name']} \n"
+                                       f"Влажность: {humidity - 6}% \n"
+                                       f"Макс. темп: {round(min_temp - 273)}°C \n"
+                                       f"Мин. темп: {round(max_temp - 273)}°C \n"
                                        f"Сегодня у нас капец как {clouds} \n"
-                                       f"Скорость ветра: {wind['speed']} камаз \n"
+                                       f"Скорость ветра: {wind['speed']} мчс \n"
                                        f"Давление {pressure} давит как депресия в 0 лет \n"
                                        f"Текущее время: {time}")
         except:
