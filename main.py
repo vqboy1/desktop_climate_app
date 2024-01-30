@@ -1,10 +1,12 @@
-import sys, datetime
+import sys
 
 from PyQt6 import QtWidgets
 
 from mainWindowApp import Ui_Form
 
 from api import get_weather, get_time
+
+from db import auth, reg
 
 
 class MainApp(QtWidgets.QWidget, Ui_Form):
@@ -16,10 +18,24 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
 
         self.btn_login.clicked.connect(self.on_login)
 
+        self.btn_register.clicked.connect(self.on_reg)
+
         self.btn_get_weather.clicked.connect(self.on_get_weather_press)
 
     def on_login(self):
-        self.stackedWidget.setCurrentIndex(1)
+        login = self.edit_login.text()
+        password = self.edit_password.text()
+
+        if auth(login, password):
+            self.stackedWidget.setCurrentIndex(1)
+
+
+    def on_reg(self):
+        login = self.edit_login.text()
+        password = self.edit_password.text()
+
+        reg(login, password)
+
 
     def on_get_weather_press(self):
         town = self.lineEdit_town.text()

@@ -8,7 +8,7 @@ def get_logins():
         print(i)
     return a
 def reg(login,password):
-    db.execute("""insert into "weather_login" (login,password) values(?,?);""", [login,password])
+    db.execute("""insert into weather_login (Login, Password) values(?,?);""", [login,password])
     db.commit()
 def auth(login,password):
     log = get_logins()
