@@ -23,18 +23,21 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
 
     def on_get_weather_press(self):
         town = self.lineEdit_town.text()
-        stats = get_weather(town)
-        wind = stats['wind']
-        clouds = stats['weather'][0]['description']
-        prime = stats['main']
-        pressure = prime['pressure']
-        max_temp = prime['temp_max']  # temp
-        min_temp = prime['temp_min']  # temp
-        self.label_weather.setText(f"Макс. темп: {round(min_temp - 273)} \n"
-                                   f"Мин. темп: {round(max_temp - 273)} \n"
-                                   f"Сегодня у нас капец как {clouds} \n"
-                                   f"Скорость ветра: {wind['speed']} камаз \n"
-                                   f"Давление {pressure} давит как депресия в 0 лет")
+        try:
+            stats = get_weather(town)
+            wind = stats['wind']
+            clouds = stats['weather'][0]['description']
+            prime = stats['main']
+            pressure = prime['pressure']
+            max_temp = prime['temp_max']  # temp
+            min_temp = prime['temp_min']  # temp
+            self.label_weather.setText(f"Макс. темп: {round(min_temp - 273)} \n"
+                                       f"Мин. темп: {round(max_temp - 273)} \n"
+                                       f"Сегодня у нас капец как {clouds} \n"
+                                       f"Скорость ветра: {wind['speed']} камаз \n"
+                                       f"Давление {pressure} давит как депресия в 0 лет")
+        except:
+            self.label_weather.setText("Такого города не существует")
 
 
 if __name__ == '__main__':
