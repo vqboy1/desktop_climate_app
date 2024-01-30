@@ -4,7 +4,7 @@ from PyQt6 import QtWidgets
 
 from mainWindowApp import Ui_Form
 
-from api import get_weather
+from api import get_weather, get_time
 
 
 class MainApp(QtWidgets.QWidget, Ui_Form):
@@ -25,6 +25,7 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
         town = self.lineEdit_town.text()
         try:
             stats = get_weather(town)
+            day_time = get_time(stats)
             wind = stats['wind']
             clouds = stats['weather'][0]['description']
             prime = stats['main']
@@ -37,8 +38,10 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
                                        f"Макс. темп: {round(min_temp - 273)}°C \n"
                                        f"Мин. темп: {round(max_temp - 273)}°C \n"
                                        f"Сегодня у нас капец как {clouds} \n"
-                                       f"Скорость ветра: {wind['speed']} мчс \n"
-                                       f"Давление {pressure} давит как депресия в 0 лет \n")
+                                       f"Скорость ветра: {wind['speed']} м/с \n"
+                                       f"Давление: {pressure} давит как депресия в 0 лет \n"
+                                       f"Дата: {day_time[0]} \n"
+                                       f"Текущее время: {day_time[1]} \n")
         except:
             self.label_weather.setText("Такого города не существует")
 
@@ -49,3 +52,4 @@ if __name__ == '__main__':
 
     window.show()
     app.exec()
+

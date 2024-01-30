@@ -25,7 +25,7 @@ def get_time(data):
     from datetime import datetime
     from timezonefinder import TimezoneFinder
 
-    # a = {'coord': {'lon': 37.6156, 'lat': 55.7522}, 'weather': [{'id': 804, 'main': 'Clouds',
+    # data = {'coord': {'lon': 37.6156, 'lat': 55.7522}, 'weather': [{'id': 804, 'main': 'Clouds',
     #                                                              'description': 'пасмурно', 'icon': '04d'}],
     #      'base': 'stations', 'main': {'temp': 269.32, 'feels_like': 264.18, 'temp_min': 268.79, 'temp_max': 269.9,
     #                                   'pressure': 1036, 'humidity':
@@ -42,5 +42,6 @@ def get_time(data):
     obj = obj.timezone_at(lng=longitude, lat=latitude)
     tz = pytz.timezone(obj)
     datetime_town = datetime.now(tz)
+    current_day = str(datetime_town.today()).split()[0]
     current_time = datetime_town.strftime("%H:%M:%S")
-    return current_time
+    return [current_day, current_time]
