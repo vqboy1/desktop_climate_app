@@ -76,7 +76,8 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
                                        f"Скорость ветра: {wind['speed']} м/с \n"
                                        f"Давление: {pressure} давит как депресия в 0 лет \n"
                                        f"Дата: {day_time[0]} \n"
-                                       f"Текущее время: {day_time[1]} \n")
+                                       f"Текущее время: {day_time[1]} \n"
+                                       f"(изменения только по кнопке)")
         except:
             self.label_weather.setText("Такого города не существует")
 
