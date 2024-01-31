@@ -17,7 +17,7 @@
    <item>
     <widget class="QStackedWidget" name="stackedWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="page">
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -100,7 +100,7 @@
           <enum>Qt::LeftToRight</enum>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="tab_2">
           <attribute name="title">
@@ -221,7 +221,7 @@
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLineEdit" name="sourceEdit_2">
+                  <widget class="QLineEdit" name="lineEdit_source">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -249,7 +249,7 @@
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_11">
                  <item alignment="Qt::AlignHCenter">
-                  <widget class="QPushButton" name="btn_load_source_file_2">
+                  <widget class="QPushButton" name="btn_load_source_file">
                    <property name="minimumSize">
                     <size>
                      <width>200</width>
@@ -286,7 +286,7 @@
                   </spacer>
                  </item>
                  <item alignment="Qt::AlignHCenter">
-                  <widget class="QPushButton" name="btn_load_local_file_2">
+                  <widget class="QPushButton" name="btn_load_local_file">
                    <property name="minimumSize">
                     <size>
                      <width>200</width>
@@ -334,7 +334,7 @@
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_8">
               <item alignment="Qt::AlignVCenter">
-               <widget class="QPushButton" name="btn_visual_2">
+               <widget class="QPushButton" name="btn_visual">
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
@@ -355,7 +355,7 @@
                </widget>
               </item>
               <item alignment="Qt::AlignHCenter|Qt::AlignBottom">
-               <widget class="QLabel" name="error_label_2">
+               <widget class="QLabel" name="error_label_loadfile">
                 <property name="font">
                  <font>
                   <pointsize>10</pointsize>

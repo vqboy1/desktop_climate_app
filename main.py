@@ -22,6 +22,10 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
 
         self.btn_get_weather.clicked.connect(self.on_get_weather_press)
 
+        self.btn_load_local_file.connect(self.load_local_table())
+
+        self.btn_load_source_file.connect(self.load_source_table())
+
     def on_login(self):
         login = self.edit_login.text()
         password = self.edit_password.text()
@@ -33,6 +37,11 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
         else:
             self.error_label.setText("Вы что-то неправильно ввели")
 
+    def load_local_table(self):
+        pass
+
+    def load_source_table(self):
+        pass
 
     def on_reg(self):
         login = self.edit_login.text()
@@ -47,7 +56,6 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
         else:
             reg(login, password)
 
-
     def on_get_weather_press(self):
         town = self.lineEdit_town.text()
         try:
@@ -61,7 +69,7 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
             min_temp = prime['temp_min']
             humidity = prime['humidity']
             self.label_weather.setText(f"Город {stats['name']} \n"
-                                       f"Влажность: {humidity - 6}% \n"
+                                       f"Влажность: {humidity - 10}% \n"
                                        f"Макс. темп: {round(min_temp - 273)}°C \n"
                                        f"Мин. темп: {round(max_temp - 273)}°C \n"
                                        f"Сегодня у нас капец как {clouds} \n"
@@ -79,4 +87,3 @@ if __name__ == '__main__':
 
     window.show()
     app.exec()
-
