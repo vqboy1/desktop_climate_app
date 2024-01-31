@@ -43,6 +43,10 @@ class Ui_Form(object):
         self.verticalLayout_2.addLayout(self.horizontalLayout_2)
         spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         self.verticalLayout_2.addItem(spacerItem1)
+        self.error_label = QtWidgets.QLabel(parent=self.page)
+        self.error_label.setText("")
+        self.error_label.setObjectName("error_label")
+        self.verticalLayout_2.addWidget(self.error_label)
         self.stackedWidget.addWidget(self.page)
         self.page_2 = QtWidgets.QWidget()
         self.page_2.setObjectName("page_2")
@@ -190,7 +194,7 @@ class Ui_Form(object):
         self.horizontalLayout.addWidget(self.stackedWidget)
 
         self.retranslateUi(Form)
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
         self.Info_Widget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
@@ -199,7 +203,7 @@ class Ui_Form(object):
         Form.setWindowTitle(_translate("Form", "Form"))
         self.edit_login.setPlaceholderText(_translate("Form", "Логин"))
         self.edit_password.setPlaceholderText(_translate("Form", "Пароль"))
-        self.btn_register.setText(_translate("Form", "Заергистрироваться"))
+        self.btn_register.setText(_translate("Form", "Зарегистрироваться"))
         self.btn_login.setText(_translate("Form", "Войти"))
         self.lineEdit_town.setPlaceholderText(_translate("Form", "Город"))
         self.btn_get_weather.setText(_translate("Form", "Получить текущую погоду"))

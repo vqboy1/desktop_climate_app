@@ -6,7 +6,7 @@ from mainWindowApp import Ui_Form
 
 from api import get_weather, get_time
 
-from db import auth, reg
+from db import auth, reg, get_users
 
 
 class MainApp(QtWidgets.QWidget, Ui_Form):
@@ -28,13 +28,20 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
 
         if auth(login, password):
             self.stackedWidget.setCurrentIndex(1)
+        elif len(login) + len(password) == 0:
+            self.error_label.setText("Введите логин и пароль")
+        else:
+            self.error_label.setText("Вы не зарегистрированы")
 
 
     def on_reg(self):
         login = self.edit_login.text()
         password = self.edit_password.text()
 
-        reg(login, password)
+        if len(login) < 3 or len(password) < 3:
+            self.error_label.setText("Длина логина или пароля слишком мала.")
+        else:
+            reg(login, password)
 
 
     def on_get_weather_press(self):

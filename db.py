@@ -7,14 +7,22 @@ def get_logins():
         a.append(i)
         print(i)
     return a
+
+def get_users():
+    result = db.execute("""select * from "weather_login";""")
+    a = []
+    for i in result:
+        a.append(i[0])
+    return a
+
+
 def reg(login,password):
     db.execute("""insert into weather_login (Login, Password) values(?,?);""", [login,password])
     db.commit()
 def auth(login,password):
     log = get_logins()
-    for i in log:
-        if i == (login,password):
-            return True
+    if (login, password) in log:
+        return True
     return False
 if __name__ == '__main__':
     reg("Вася","1234")
