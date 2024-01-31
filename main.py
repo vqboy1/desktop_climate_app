@@ -31,7 +31,7 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
         elif len(login) + len(password) == 0:
             self.error_label.setText("Введите логин и пароль")
         else:
-            self.error_label.setText("Вы не зарегистрированы")
+            self.error_label.setText("Вы что-то неправильно ввели")
 
 
     def on_reg(self):
@@ -40,6 +40,10 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
 
         if len(login) < 3 or len(password) < 3:
             self.error_label.setText("Длина логина или пароля слишком мала.")
+        elif len(login) + len(password) == 0:
+            self.error_label.setText("Введите логин и пароль")
+        elif login in get_users():
+            self.error_label.setText("Такой логин уже существует / неправильный пароль")
         else:
             reg(login, password)
 
