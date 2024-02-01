@@ -22,9 +22,9 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
 
         self.btn_get_weather.clicked.connect(self.on_get_weather_press)
 
-        self.btn_load_local_file.connect(self.load_local_table())
+        self.btn_load_local_file.clicked.connect(self.load_local_table)
 
-        self.btn_load_source_file.connect(self.load_source_table())
+        self.btn_load_source_file.clicked.connect(self.load_source_table)
 
     def on_login(self):
         login = self.edit_login.text()
