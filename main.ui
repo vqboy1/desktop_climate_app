@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>692</width>
-    <height>591</height>
+    <width>758</width>
+    <height>549</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -100,33 +100,37 @@
           <enum>Qt::LeftToRight</enum>
          </property>
          <property name="currentIndex">
-          <number>1</number>
+          <number>2</number>
          </property>
          <widget class="QWidget" name="tab_2">
           <attribute name="title">
            <string>Мониторинг</string>
           </attribute>
-          <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <layout class="QVBoxLayout" name="verticalLayout_4">
            <item>
-            <widget class="QWidget" name="widget" native="true">
+            <widget class="QFrame" name="frame_11">
              <property name="maximumSize">
               <size>
-               <width>250</width>
-               <height>16777215</height>
+               <width>16777215</width>
+               <height>40</height>
               </size>
              </property>
-             <layout class="QVBoxLayout" name="verticalLayout_16">
-              <item>
-               <widget class="QLineEdit" name="lineEdit_town">
-                <property name="placeholderText">
-                 <string>Город</string>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_5">
+              <item alignment="Qt::AlignHCenter">
+               <widget class="QLabel" name="label">
+                <property name="font">
+                 <font>
+                  <pointsize>14</pointsize>
+                 </font>
                 </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="btn_get_weather">
                 <property name="text">
-                 <string>Получить текущую погоду</string>
+                 <string>Мониторинг</string>
                 </property>
                </widget>
               </item>
@@ -134,10 +138,65 @@
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="label_weather">
-             <property name="text">
-              <string/>
+            <widget class="QFrame" name="frame_10">
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
              </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_5">
+              <item>
+               <widget class="QWidget" name="widget" native="true">
+                <property name="maximumSize">
+                 <size>
+                  <width>250</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_16">
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_town">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="placeholderText">
+                    <string>Город</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btn_get_weather">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Получить текущую погоду</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_weather">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+             </layout>
             </widget>
            </item>
           </layout>
@@ -375,6 +434,68 @@
           <attribute name="title">
            <string>Визуализация</string>
           </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QFrame" name="frame_4">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_6">
+              <item alignment="Qt::AlignHCenter">
+               <widget class="QLabel" name="label_5">
+                <property name="font">
+                 <font>
+                  <pointsize>14</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Визуализация</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="frame_5">
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="frame_8">
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="frame_9">
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
          <widget class="QWidget" name="tab_3">
           <attribute name="title">
