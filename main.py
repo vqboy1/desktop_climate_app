@@ -26,6 +26,8 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
 
         self.btn_load_source_file.clicked.connect(self.load_source_table)
 
+        self.btn_visual.clicked.connect(self.to_visual)
+
     def on_login(self):
         login = self.edit_login.text()
         password = self.edit_password.text()
@@ -41,6 +43,9 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
         pass
 
     def load_source_table(self):
+        pass
+
+    def to_visual(self):
         pass
 
     def on_reg(self):
