@@ -72,12 +72,14 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
                                        f"Влажность: {humidity - 10}% \n"
                                        f"Макс. темп: {round(min_temp - 273)}°C \n"
                                        f"Мин. темп: {round(max_temp - 273)}°C \n"
-                                       f"Сегодня у нас капец как {clouds} \n"
+                                       f"Сегодня у нас {clouds} \n"
+                                       f"Облачность: {stats['clouds']['all']}% \n"
                                        f"Скорость ветра: {wind['speed']} м/с \n"
-                                       f"Давление: {pressure} давит как депресия в 0 лет \n"
+                                       f"Давление: {pressure} Гектопаскалей \n"
                                        f"Дата: {day_time[0]} \n"
                                        f"Текущее время: {day_time[1]} \n"
                                        f"(изменения только по кнопке)")
+            self.lineEdit_town.setText('')
         except:
             self.label_weather.setText("Такого города не существует")
 
