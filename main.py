@@ -1,5 +1,7 @@
 import sys
 
+import pyqtgraph as pg
+
 from PyQt6 import QtWidgets
 
 from mainWindowApp import Ui_Form
@@ -28,6 +30,8 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
 
         self.btn_visual.clicked.connect(self.to_visual)
 
+        self.btn_analyze.clicked.connect(self.build_graph)
+
     def on_login(self):
         login = self.edit_login.text()
         password = self.edit_password.text()
@@ -47,6 +51,14 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
 
     def to_visual(self):
         pass
+
+    def build_graph(self):
+        time = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        temperature = [30, 32, 34, 32, 33, 31, 29, 32, 35, 30]
+
+        self.plll = pg.plot(title="Погода")
+        self.plll.plot(time, temperature)
+        self.graph_layout.addWidget(self.plll)
 
     def on_reg(self):
         login = self.edit_login.text()
