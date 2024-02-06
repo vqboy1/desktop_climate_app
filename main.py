@@ -53,18 +53,14 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
         pass
 
     def build_graph(self):
-
-        town = "Moscow"
+        if self.graph_layout.count() > 0:
+            self.graph_layout.removeWidget(self.plll)
+        town = self.edit_town_visual.text()
         data = get_weather_5day(town)
         temperature = get_temp_5day(data)
         time = get_time_5day(data)
         xtime = [i for i in range(len(temperature))]
         xdict = dict(enumerate(time))
-        x = [1, 2, 3, 4, 5, 6]
-        y = [1, 2, 3, 4, 5, 6]
-
-
-
         self.plll = pg.plot(title="Погода")
         self.plll.plot(xtime, temperature)
         stringaxis = pg.AxisItem(orientation='bottom')
