@@ -45,3 +45,45 @@ def get_time(data):
     current_day = str(datetime_town.today()).split()[0]
     current_time = datetime_town.strftime("%H:%M:%S")
     return [current_day, current_time]
+
+def get_weather_5day(town):
+
+    import requests
+
+
+    # Замените YOUR_API_KEY на ваш API ключ OpenWeatherMap
+    API_KEY = 'bd5e378503939ddaee76f12ad7a97608'
+    CITY_NAME = town
+
+    # Формируем URL для запроса
+    url = f'https://api.openweathermap.org/data/2.5/forecast?q={CITY_NAME}&appid={API_KEY}'
+
+    # Отправляем GET запрос и получаем данные о погоде
+    response = requests.get(url)
+    data = response.json()
+
+
+    # Выводим температуру и дату
+    return data
+
+
+def get_time_5day(data):
+
+    date = []
+
+    for i in range(len(data["list"])):
+        date.append(data["list"][i]["dt_txt"])
+
+    return date
+
+
+def get_temp_5day(data):
+
+    temp = []
+
+    for i in range(len(data["list"])):
+        temp.append(round(data["list"][i]["main"]["temp"] - 273, 1))
+
+    return temp
+
+a = get_weather_5day("Moscow")
