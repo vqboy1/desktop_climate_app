@@ -70,7 +70,7 @@ def get_time_5day(data):
     date = []
 
     for i in range(len(data["list"])):
-        date.append(data["list"][i]["dt_txt"])
+        date.append(data["list"][i]["dt_txt"][5:-3])
 
     return date
 

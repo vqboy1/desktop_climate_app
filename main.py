@@ -68,6 +68,9 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
         self.plll.setAxisItems(axisItems={'bottom': stringaxis})
         self.graph_layout.addWidget(self.plll)
 
+    def build_bar:
+        pass
+
 
 
     def on_reg(self):
