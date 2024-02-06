@@ -85,5 +85,3 @@ def get_temp_5day(data):
         temp.append(round(data["list"][i]["main"]["temp"] - 273, 1))
 
     return temp
-
-a = get_weather_5day("Moscow")
