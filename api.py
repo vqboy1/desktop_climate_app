@@ -62,8 +62,6 @@ def get_weather_5day(town):
     response = requests.get(url)
     data = response.json()
 
-
-    # Выводим температуру и дату
     return data
 
 

@@ -6,7 +6,7 @@ from PyQt6 import QtWidgets
 
 from mainWindowApp import Ui_Form
 
-from api import get_weather, get_time
+from api import *
 
 from db import auth, reg, get_users
 
@@ -53,12 +53,26 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
         pass
 
     def build_graph(self):
-        time = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-        temperature = [30, 32, 34, 32, 33, 31, 29, 32, 35, 30]
+
+        town = "Moscow"
+        data = get_weather_5day(town)
+        temperature = get_temp_5day(data)
+        time = get_time_5day(data)
+        xtime = [i for i in range(len(temperature))]
+        xdict = dict(enumerate(time))
+        x = [1, 2, 3, 4, 5, 6]
+        y = [1, 2, 3, 4, 5, 6]
+
+
 
         self.plll = pg.plot(title="Погода")
-        self.plll.plot(time, temperature)
+        self.plll.plot(xtime, temperature)
+        stringaxis = pg.AxisItem(orientation='bottom')
+        stringaxis.setTicks([xdict.items()])
+        self.plll.setAxisItems(axisItems={'bottom': stringaxis})
         self.graph_layout.addWidget(self.plll)
+
+
 
     def on_reg(self):
         login = self.edit_login.text()
