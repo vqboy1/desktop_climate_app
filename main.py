@@ -93,6 +93,7 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
             self.graph_layout.removeWidget(self.plll)
         town = self.edit_town_visual.text()
         if len(town) == 0 or not (graph_flag or bar_flag):
+            self.visual_label.setText("Произошла ошибка. Проверьте введеные данные.")
             return
         self.label_town_graph.setText(town)
         self.label_town_graph.setText(town)
