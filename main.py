@@ -10,6 +10,9 @@ from api import *
 
 from db import auth, reg, get_users
 
+bar_flag = False
+graph_flag = False
+
 
 class MainApp(QtWidgets.QWidget, Ui_Form):
     def __init__(self, parent=None):
@@ -72,35 +75,42 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
         pass
 
     def bar_clicked(self):
-        pass
+        rb = self.sender()
+        print(rb.isChecked())
+        global bar_flag
+        bar_flag = rb.isChecked()
+        return
 
     def graph_clicked(self):
         rb = self.sender()
         print(rb.isChecked())
-        global graph_cond
-        graph_cond = False
-        self.graph_cond = rb.isChecked()
+        global graph_flag
+        graph_flag = rb.isChecked()
         return
 
     def build_graph(self):
         if self.graph_layout.count() > 0:
             self.graph_layout.removeWidget(self.plll)
         town = self.edit_town_visual.text()
+        if len(town) == 0 or not (graph_flag or bar_flag):
+            return
         self.label_town_graph.setText(town)
         self.label_town_graph.setText(town)
-        if self.graph_cond:
-            data = get_weather_5day(town)
-            temperature = get_temp_5day(data)
-            time = get_time_5day(data)
-            xtime = [i for i in range(len(temperature))]
-            xdict = dict(enumerate(time))
-            self.plll = pg.plot(title="Погода")
+        data = get_weather_5day(town)
+        temperature = get_temp_5day(data)
+        time = get_time_5day(data)
+        xtime = [i for i in range(len(temperature))]
+        xdict = dict(enumerate(time))
+        self.plll = pg.plot(title="Погода")
+        if graph_flag:
             self.plll.plot(xtime, temperature)
-            stringaxis = pg.AxisItem(orientation='bottom')
-            stringaxis.setTicks([xdict.items()])
-            self.plll.setAxisItems(axisItems={'bottom': stringaxis})
-            self.graph_layout.addWidget(self.plll)
-            self.edit_town_visual.setText("")
+        elif bar_flag:
+            self.plll.addItem(pg.BarGraphItem(x=xtime, height=temperature, width=0.3, brush='w'))
+        stringaxis = pg.AxisItem(orientation='bottom')
+        stringaxis.setTicks([xdict.items()])
+        self.plll.setAxisItems(axisItems={'bottom': stringaxis})
+        self.graph_layout.addWidget(self.plll)
+        self.edit_town_visual.setText("")
 
     def build_bar(self):
         pass
