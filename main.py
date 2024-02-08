@@ -113,13 +113,6 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
         self.graph_layout.addWidget(self.plll)
         self.edit_town_visual.setText("")
 
-    def build_bar(self):
-        pass
-
-    def analyze(self):
-        pass
-
-
     def on_get_weather_press(self):
         town = self.lineEdit_town.text()
         if len(town) == 0:
