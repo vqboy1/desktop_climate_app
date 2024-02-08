@@ -72,34 +72,38 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
         pass
 
     def bar_clicked(self):
-        radioBtn = self.sender()
-        return radioBtn.isChecked()
+        pass
 
     def graph_clicked(self):
-        radioBtn = self.sender()
-        return radioBtn.isChecked()
+        rb = self.sender()
+        print(rb.isChecked())
+        global graph_cond
+        graph_cond = False
+        self.graph_cond = rb.isChecked()
+        return
 
     def build_graph(self):
         if self.graph_layout.count() > 0:
             self.graph_layout.removeWidget(self.plll)
         town = self.edit_town_visual.text()
-        data = get_weather_5day(town)
-        temperature = get_temp_5day(data)
-        time = get_time_5day(data)
-        xtime = [i for i in range(len(temperature))]
-        xdict = dict(enumerate(time))
-        self.plll = pg.plot(title="Погода")
-        self.plll.plot(xtime, temperature)
-        stringaxis = pg.AxisItem(orientation='bottom')
-        stringaxis.setTicks([xdict.items()])
-        self.plll.setAxisItems(axisItems={'bottom': stringaxis})
-        self.graph_layout.addWidget(self.plll)
         self.label_town_graph.setText(town)
-        self.edit_town_visual.setText("")
+        self.label_town_graph.setText(town)
+        if self.graph_cond:
+            data = get_weather_5day(town)
+            temperature = get_temp_5day(data)
+            time = get_time_5day(data)
+            xtime = [i for i in range(len(temperature))]
+            xdict = dict(enumerate(time))
+            self.plll = pg.plot(title="Погода")
+            self.plll.plot(xtime, temperature)
+            stringaxis = pg.AxisItem(orientation='bottom')
+            stringaxis.setTicks([xdict.items()])
+            self.plll.setAxisItems(axisItems={'bottom': stringaxis})
+            self.graph_layout.addWidget(self.plll)
+            self.edit_town_visual.setText("")
 
     def build_bar(self):
-        if self.graph_layout.count() > 0:
-            self.graph_layout.removeWidget(self.plll)
+        pass
 
     def analyze(self):
         pass
