@@ -32,6 +32,10 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
 
         self.btn_analyze.clicked.connect(self.build_graph)
 
+        self.radio_btn_graph.toggled.connect(self.graph_clicked)
+
+        self.radio_btn_bar.toggled.connect(self.bar_clicked)
+
     def on_login(self):
         login = self.edit_login.text()
         password = self.edit_password.text()
@@ -43,6 +47,21 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
         else:
             self.error_label.setText("Вы что-то неправильно ввели")
 
+    def on_reg(self):
+        login = self.edit_login.text()
+        password = self.edit_password.text()
+
+        if len(login) < 3 or len(password) < 3:
+            self.error_label.setText("Длина логина или пароля слишком мала.")
+        elif len(login) + len(password) == 0:
+            self.error_label.setText("Введите логин и пароль")
+        elif login in get_users():
+            self.error_label.setText("Такой логин уже существует / неправильный пароль")
+        elif ' ' in login or ' ' in password:
+            self.error_label.setText("Логин и пароль не должны иметь пробелы")
+        else:
+            reg(login, password)
+
     def load_local_table(self):
         pass
 
@@ -51,6 +70,14 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
 
     def to_visual(self):
         pass
+
+    def bar_clicked(self):
+        radioBtn = self.sender()
+        return radioBtn.isChecked()
+
+    def graph_clicked(self):
+        radioBtn = self.sender()
+        return radioBtn.isChecked()
 
     def build_graph(self):
         if self.graph_layout.count() > 0:
@@ -67,26 +94,16 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
         stringaxis.setTicks([xdict.items()])
         self.plll.setAxisItems(axisItems={'bottom': stringaxis})
         self.graph_layout.addWidget(self.plll)
+        self.label_town_graph.setText(town)
+        self.edit_town_visual.setText("")
 
-    def build_bar:
+    def build_bar(self):
+        if self.graph_layout.count() > 0:
+            self.graph_layout.removeWidget(self.plll)
+
+    def analyze(self):
         pass
 
-
-
-    def on_reg(self):
-        login = self.edit_login.text()
-        password = self.edit_password.text()
-
-        if len(login) < 3 or len(password) < 3:
-            self.error_label.setText("Длина логина или пароля слишком мала.")
-        elif len(login) + len(password) == 0:
-            self.error_label.setText("Введите логин и пароль")
-        elif login in get_users():
-            self.error_label.setText("Такой логин уже существует / неправильный пароль")
-        elif ' ' in login or ' ' in password:
-            self.error_label.setText("Логин и пароль не должны иметь пробелы")
-        else:
-            reg(login, password)
 
     def on_get_weather_press(self):
         town = self.lineEdit_town.text()

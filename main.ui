@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>787</width>
-    <height>557</height>
+    <width>835</width>
+    <height>581</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -96,11 +96,17 @@
       <layout class="QHBoxLayout" name="horizontalLayout_7">
        <item>
         <widget class="QTabWidget" name="Info_Widget">
+         <property name="minimumSize">
+          <size>
+           <width>500</width>
+           <height>140</height>
+          </size>
+         </property>
          <property name="layoutDirection">
           <enum>Qt::LeftToRight</enum>
          </property>
          <property name="currentIndex">
-          <number>2</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="tab_2">
           <attribute name="title">
@@ -524,6 +530,22 @@
                 <property name="title">
                  <string>Тип данных</string>
                 </property>
+                <layout class="QVBoxLayout" name="verticalLayout_13">
+                 <item>
+                  <widget class="QRadioButton" name="radio_btn_graph">
+                   <property name="text">
+                    <string>График</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QRadioButton" name="radio_btn_bar">
+                   <property name="text">
+                    <string>Диаграмма</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
               </item>
              </layout>
@@ -568,6 +590,49 @@
            <string>Анализ</string>
           </attribute>
           <layout class="QVBoxLayout" name="verticalLayout_7">
+           <item>
+            <widget class="QFrame" name="frame_12">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_14">
+              <item alignment="Qt::AlignHCenter">
+               <widget class="QLabel" name="label_6">
+                <property name="font">
+                 <font>
+                  <pointsize>14</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Анализ</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item alignment="Qt::AlignHCenter">
+            <widget class="QLabel" name="label_town_graph">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>10</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Тут будет название города</string>
+             </property>
+            </widget>
+           </item>
            <item>
             <layout class="QVBoxLayout" name="graph_layout"/>
            </item>
