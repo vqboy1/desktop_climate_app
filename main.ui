@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>835</width>
-    <height>581</height>
+    <width>916</width>
+    <height>542</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,6 +21,36 @@
      </property>
      <widget class="QWidget" name="page">
       <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QFrame" name="frame_13">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_15">
+          <item alignment="Qt::AlignHCenter">
+           <widget class="QLabel" name="label_7">
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Система регистрации</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
        <item>
         <spacer name="verticalSpacer">
          <property name="orientation">
@@ -38,6 +68,11 @@
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
           <widget class="QLineEdit" name="edit_login">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
            <property name="placeholderText">
             <string>Логин</string>
            </property>
@@ -45,6 +80,11 @@
          </item>
          <item>
           <widget class="QLineEdit" name="edit_password">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
            <property name="placeholderText">
             <string>Пароль</string>
            </property>
@@ -56,6 +96,11 @@
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
           <widget class="QPushButton" name="btn_register">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
            <property name="text">
             <string>Зарегистрироваться</string>
            </property>
@@ -63,6 +108,11 @@
          </item>
          <item>
           <widget class="QPushButton" name="btn_login">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
            <property name="text">
             <string>Войти</string>
            </property>
@@ -536,6 +586,9 @@
                    <property name="text">
                     <string>График</string>
                    </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                  <item>
@@ -655,7 +708,7 @@
               </size>
              </property>
              <property name="text">
-              <string>Тут будет название города</string>
+              <string>Тут будет график</string>
              </property>
             </widget>
            </item>
