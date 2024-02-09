@@ -11,7 +11,7 @@ from api import *
 from db import auth, reg, get_users
 
 bar_flag = False
-graph_flag = False
+graph_flag = True
 
 
 class MainApp(QtWidgets.QWidget, Ui_Form):
