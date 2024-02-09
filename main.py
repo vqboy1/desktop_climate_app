@@ -112,6 +112,7 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
         self.plll.setAxisItems(axisItems={'bottom': stringaxis})
         self.graph_layout.addWidget(self.plll)
         self.edit_town_visual.setText("")
+        self.Info_Widget.setCurrentIndex(3)
 
     def on_get_weather_press(self):
         town = self.lineEdit_town.text()
