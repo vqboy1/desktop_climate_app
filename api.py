@@ -4,7 +4,7 @@ def get_weather(town):
 
 
     # Замените YOUR_API_KEY на ваш API ключ OpenWeatherMap
-    API_KEY = 'bd5e378503939ddaee76f12ad7a97608'
+    API_KEY = 'ce938e06adce48795531aa7e2b01dd6a'
     CITY_NAME = town
 
     # Формируем URL для запроса
