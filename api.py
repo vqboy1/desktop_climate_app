@@ -70,7 +70,7 @@ def get_time_5day(data):
     date = []
 
     for i in range(len(data["list"])):
-        date.append(f'{data["list"][i]["dt_txt"][5:-6]}ч')
+        date.append(f'{data["list"][i]["dt_txt"][5:-6]}ч \n'.replace(' ', '\n'))
 
     return date
 
