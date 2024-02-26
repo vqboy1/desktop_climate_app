@@ -15,8 +15,8 @@ from db import auth, reg, get_users
 bar_flag = False
 graph_flag = True
 def get_statistics(lst):
-    return (f"Медиана = {st.median(lst)} "
-            f"Среднее значение = {round(st.mean(lst), 2)} "
+    return (f"Медиана = {round(st.median(lst), 2)}; "
+            f"Среднее значение = {round(st.mean(lst), 2)}; "
             f"Отклонение = {round(st.stdev(lst), 2)}")
 
 
