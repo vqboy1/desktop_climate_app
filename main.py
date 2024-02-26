@@ -99,27 +99,35 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
         if self.graph_layout.count() > 0:
             self.graph_layout.removeWidget(self.plll)
         town = self.edit_town_visual.text()
-        if len(town) == 0 or not (graph_flag or bar_flag):
+        if len(town) == 0:
             self.visual_label.setText("Произошла ошибка. Проверьте введеные данные.")
             return
         self.label_town_graph.setText(town)
-        self.label_town_graph.setText(town)
+
+        #  getting data from dictionary
         data = get_weather_5day(town)
         temperature = get_temp_5day(data)
+        humid = get_humid_5day(data)
         time = get_time_5day(data)
+
         xtime = [i for i in range(len(temperature))]
         xdict = dict(enumerate(time))
         self.plll = pg.plot(title="Погода")
+
         if graph_flag:
             self.plll.plot(xtime, temperature)
         elif bar_flag:
             self.plll.addItem(pg.BarGraphItem(x=xtime, height=temperature, width=0.3, brush='w'))
+
         stringaxis = pg.AxisItem(orientation='bottom')
         stringaxis.setTicks([xdict.items()])
         self.plll.setAxisItems(axisItems={'bottom': stringaxis})
         self.graph_layout.addWidget(self.plll)
+
         self.edit_town_visual.setText("")
         self.temp_stats.setText(get_statistics(temperature))
+        self.humid_stats.setText(get_statistics(humid))
+
         self.Info_Widget.setCurrentIndex(3)
 
     def on_get_weather_press(self):

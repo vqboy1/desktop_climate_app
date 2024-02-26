@@ -747,10 +747,16 @@
            </item>
            <item alignment="Qt::AlignHCenter">
             <widget class="QLabel" name="label_town_graph">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>15</height>
+              </size>
+             </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
-               <height>10</height>
+               <height>15</height>
               </size>
              </property>
              <property name="text">
@@ -783,7 +789,7 @@
               <property name="geometry">
                <rect>
                 <x>0</x>
-                <y>0</y>
+                <y>-269</y>
                 <width>901</width>
                 <height>870</height>
                </rect>
@@ -881,7 +887,7 @@
                    <layout class="QVBoxLayout" name="graph_layout_2"/>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_10">
+                   <widget class="QLabel" name="humid_stats">
                     <property name="maximumSize">
                      <size>
                       <width>16777215</width>

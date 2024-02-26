@@ -83,3 +83,13 @@ def get_temp_5day(data):
         temp.append(round(data["list"][i]["main"]["temp"] - 273, 1))
 
     return temp
+
+
+def get_humid_5day(data):
+
+    humid = []
+
+    for i in range(len(data["list"])):
+        humid.append(data["list"][i]["main"]["humidity"])
+
+    return humid
