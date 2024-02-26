@@ -1,5 +1,7 @@
 import sys
 
+import statistics as st
+
 import pyqtgraph as pg
 
 from PyQt6 import QtWidgets
@@ -12,6 +14,11 @@ from db import auth, reg, get_users
 
 bar_flag = False
 graph_flag = True
+def get_statistics(lst):
+    return (f"Медиана = {st.median(lst)} "
+            f"Среднее значение = {round(st.mean(lst), 2)} "
+            f"Отклонение = {round(st.stdev(lst), 2)}")
+
 
 
 class MainApp(QtWidgets.QWidget, Ui_Form):
@@ -112,6 +119,7 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
         self.plll.setAxisItems(axisItems={'bottom': stringaxis})
         self.graph_layout.addWidget(self.plll)
         self.edit_town_visual.setText("")
+        self.temp_stats.setText(get_statistics(temperature))
         self.Info_Widget.setCurrentIndex(3)
 
     def on_get_weather_press(self):
@@ -128,7 +136,7 @@ class MainApp(QtWidgets.QWidget, Ui_Form):
                 max_temp = prime['temp_max']
                 min_temp = prime['temp_min']
                 self.label_weather.setText(f"Город {stats['name']} \n"
-                                       f"Влажность: {prime['humidity'] - 10}% \n"
+                                       f"Влажность: {prime['humidity']}% \n"
                                        f"Макс. темп: {round(min_temp - 273)}°C \n"
                                        f"Мин. темп: {round(max_temp - 273)}°C \n"
                                        f"Сегодня у нас {clouds} \n"
