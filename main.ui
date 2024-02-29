@@ -6,12 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>975</width>
-    <height>764</height>
+    <width>1045</width>
+    <height>851</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:qlineargradient(spread:pad, x1:0.221, y1:0.79, x2:0.818, y2:0.165, stop:0 rgba(77, 37, 162, 255), stop:1 rgba(122, 173, 255, 255))</string>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
@@ -29,6 +32,11 @@
            <height>40</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:rgba(255,255,255,30);
+border: 1px solid rgba(255, 255, 255, 30);
+border-radius: 7px</string>
+         </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
@@ -42,6 +50,9 @@
              <font>
               <pointsize>14</pointsize>
              </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:qlineargradient(spread:reflect, x1:0.518955, y1:0.488, x2:0.501, y2:0, stop:0 rgba(0, 219, 131, 255), stop:0.994318 rgba(59, 115, 255, 255))</string>
             </property>
             <property name="text">
              <string>Система регистрации</string>
@@ -73,6 +84,9 @@
              <pointsize>12</pointsize>
             </font>
            </property>
+           <property name="styleSheet">
+            <string notr="true">background-color:rgb(255, 255, 255)</string>
+           </property>
            <property name="placeholderText">
             <string>Логин</string>
            </property>
@@ -84,6 +98,9 @@
             <font>
              <pointsize>12</pointsize>
             </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color:rgb(255, 255, 255)</string>
            </property>
            <property name="placeholderText">
             <string>Пароль</string>
@@ -101,6 +118,9 @@
              <pointsize>12</pointsize>
             </font>
            </property>
+           <property name="styleSheet">
+            <string notr="true">background-color:qlineargradient(spread:reflect, x1:0.518955, y1:0.488, x2:0.501, y2:0, stop:0 rgba(0, 219, 131, 255), stop:0.994318 rgba(59, 115, 255, 255))</string>
+           </property>
            <property name="text">
             <string>Зарегистрироваться</string>
            </property>
@@ -112,6 +132,9 @@
             <font>
              <pointsize>12</pointsize>
             </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color:qlineargradient(spread:reflect, x1:0.518955, y1:0.488, x2:0.501, y2:0, stop:0 rgba(0, 219, 131, 255), stop:0.994318 rgba(59, 115, 255, 255))</string>
            </property>
            <property name="text">
             <string>Войти</string>
@@ -135,6 +158,11 @@
        </item>
        <item>
         <widget class="QLabel" name="error_label">
+         <property name="styleSheet">
+          <string notr="true">background-color:rgba(255,255,255,30);
+border: 1px solid rgba(255, 255, 255, 30);
+border-radius: 7px</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -156,7 +184,7 @@
           <enum>Qt::LeftToRight</enum>
          </property>
          <property name="currentIndex">
-          <number>3</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="tab_2">
           <attribute name="title">
@@ -171,6 +199,11 @@
                <height>40</height>
               </size>
              </property>
+             <property name="styleSheet">
+              <string notr="true">background-color:rgba(255,255,255,30);
+border: 1px solid rgba(255, 255, 255, 30);
+border-radius: 7px</string>
+             </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
              </property>
@@ -184,6 +217,9 @@
                  <font>
                   <pointsize>14</pointsize>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color:qlineargradient(spread:reflect, x1:0.518955, y1:0.488, x2:0.501, y2:0, stop:0 rgba(0, 219, 131, 255), stop:0.994318 rgba(59, 115, 255, 255))</string>
                 </property>
                 <property name="text">
                  <string>Мониторинг</string>
@@ -210,6 +246,11 @@
                   <height>16777215</height>
                  </size>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color:rgba(255,255,255,30);
+border: 1px solid rgba(255, 255, 255, 30);
+border-radius: 7px</string>
+                </property>
                 <layout class="QVBoxLayout" name="verticalLayout_16">
                  <item>
                   <widget class="QLineEdit" name="lineEdit_town">
@@ -218,6 +259,9 @@
                      <width>0</width>
                      <height>30</height>
                     </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color:rgb(189, 232, 255)</string>
                    </property>
                    <property name="placeholderText">
                     <string>Город</string>
@@ -231,6 +275,9 @@
                      <width>0</width>
                      <height>40</height>
                     </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color:rgb(189, 232, 255)</string>
                    </property>
                    <property name="text">
                     <string>Получить текущую погоду</string>
@@ -253,6 +300,9 @@
                  <font>
                   <pointsize>12</pointsize>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color:qlineargradient(spread:reflect, x1:0, y1:0, x2:0.995, y2:1, stop:0 rgba(0, 201, 219, 255), stop:0.994318 rgba(59, 115, 255, 255))qlineargradient(spread:reflect, x1:0, y1:0, x2:0.995, y2:1, stop:0 rgba(0, 219, 131, 255), stop:0.994318 rgba(59, 115, 255, 255))</string>
                 </property>
                 <property name="text">
                  <string/>
@@ -277,6 +327,11 @@
                <height>40</height>
               </size>
              </property>
+             <property name="styleSheet">
+              <string notr="true">background-color:rgba(255,255,255,30);
+border: 1px solid rgba(255, 255, 255, 30);
+border-radius: 7px</string>
+             </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
              </property>
@@ -290,6 +345,9 @@
                  <font>
                   <pointsize>14</pointsize>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color:qlineargradient(spread:reflect, x1:0.518955, y1:0.488, x2:0.501, y2:0, stop:0 rgba(0, 219, 131, 255), stop:0.994318 rgba(59, 115, 255, 255))</string>
                 </property>
                 <property name="text">
                  <string>Работа с файлами</string>
@@ -306,6 +364,11 @@
                <width>500</width>
                <height>140</height>
               </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color:rgba(255,255,255,30);
+border: 1px solid rgba(255, 255, 255, 30);
+border-radius: 7px</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -337,6 +400,9 @@
                 <layout class="QVBoxLayout" name="verticalLayout_10">
                  <item alignment="Qt::AlignBottom">
                   <widget class="QLabel" name="label_3">
+                   <property name="styleSheet">
+                    <string notr="true">background-color:rgb(189, 232, 255)</string>
+                   </property>
                    <property name="text">
                     <string>Ссылка</string>
                    </property>
@@ -355,6 +421,9 @@
                      <width>480</width>
                      <height>16777215</height>
                     </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color:rgb(255, 255, 255)</string>
                    </property>
                   </widget>
                  </item>
@@ -385,6 +454,9 @@
                    </property>
                    <property name="cursor">
                     <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color:rgb(189, 232, 255)</string>
                    </property>
                    <property name="text">
                     <string>Загрузить ссылку</string>
@@ -429,6 +501,9 @@
                    <property name="cursor">
                     <cursorShape>PointingHandCursor</cursorShape>
                    </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color:rgb(189, 232, 255)</string>
+                   </property>
                    <property name="text">
                     <string>Загрузить файл (CSV, XLSX)</string>
                    </property>
@@ -447,6 +522,11 @@
                <width>0</width>
                <height>100</height>
               </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color:rgba(255,255,255,30);
+border: 1px solid rgba(255, 255, 255, 30);
+border-radius: 7px</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -471,6 +551,9 @@
                 <property name="cursor">
                  <cursorShape>PointingHandCursor</cursorShape>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color:rgb(189, 232, 255)</string>
+                </property>
                 <property name="text">
                  <string>Визуализация</string>
                 </property>
@@ -482,6 +565,9 @@
                  <font>
                   <pointsize>10</pointsize>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color:rgb(255, 255, 255)</string>
                 </property>
                 <property name="text">
                  <string>Выберите файлы или вставьте ссылку для загрузки</string>
@@ -506,6 +592,11 @@
                <height>40</height>
               </size>
              </property>
+             <property name="styleSheet">
+              <string notr="true">background-color:rgba(255,255,255,30);
+border: 1px solid rgba(255, 255, 255, 30);
+border-radius: 7px</string>
+             </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
              </property>
@@ -520,6 +611,9 @@
                   <pointsize>14</pointsize>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color:qlineargradient(spread:reflect, x1:0.518955, y1:0.488, x2:0.501, y2:0, stop:0 rgba(0, 219, 131, 255), stop:0.994318 rgba(59, 115, 255, 255))</string>
+                </property>
                 <property name="text">
                  <string>Визуализация</string>
                 </property>
@@ -530,6 +624,11 @@
            </item>
            <item>
             <widget class="QFrame" name="frame_5">
+             <property name="styleSheet">
+              <string notr="true">background-color:rgba(255,255,255,30);
+border: 1px solid rgba(255, 255, 255, 30);
+border-radius: 7px</string>
+             </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
              </property>
@@ -550,6 +649,9 @@
                   <width>200</width>
                   <height>16777215</height>
                  </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color:rgb(189, 232, 255)</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
@@ -583,6 +685,9 @@
                 <layout class="QVBoxLayout" name="verticalLayout_13">
                  <item>
                   <widget class="QRadioButton" name="radio_btn_graph">
+                   <property name="styleSheet">
+                    <string notr="true">background-color:rgb(189, 232, 255)</string>
+                   </property>
                    <property name="text">
                     <string>График</string>
                    </property>
@@ -593,6 +698,9 @@
                  </item>
                  <item>
                   <widget class="QRadioButton" name="radio_btn_bar">
+                   <property name="styleSheet">
+                    <string notr="true">background-color:rgb(189, 232, 255)</string>
+                   </property>
                    <property name="text">
                     <string>Диаграмма</string>
                    </property>
@@ -606,6 +714,11 @@
            </item>
            <item>
             <widget class="QFrame" name="frame_8">
+             <property name="styleSheet">
+              <string notr="true">background-color:rgba(255,255,255,30);
+border: 1px solid rgba(255, 255, 255, 30);
+border-radius: 7px</string>
+             </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
              </property>
@@ -626,6 +739,9 @@
                   <width>200</width>
                   <height>16777215</height>
                  </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color:rgb(189, 232, 255)</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
@@ -649,6 +765,9 @@
                   <height>16777215</height>
                  </size>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color:rgb(189, 232, 255)</string>
+                </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
                 </property>
@@ -662,6 +781,11 @@
            </item>
            <item>
             <widget class="QFrame" name="frame_9">
+             <property name="styleSheet">
+              <string notr="true">background-color:rgba(255,255,255,30);
+border: 1px solid rgba(255, 255, 255, 30);
+border-radius: 7px</string>
+             </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
              </property>
@@ -687,6 +811,9 @@
                 <property name="cursor">
                  <cursorShape>PointingHandCursor</cursorShape>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color:rgb(189, 232, 255)</string>
+                </property>
                 <property name="text">
                  <string>Анализ</string>
                 </property>
@@ -699,6 +826,9 @@
                   <width>16777215</width>
                   <height>10</height>
                  </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color:rgb(189, 232, 255)</string>
                 </property>
                 <property name="text">
                  <string>Тут можно вывести данные на графики</string>
@@ -723,6 +853,11 @@
                <height>40</height>
               </size>
              </property>
+             <property name="styleSheet">
+              <string notr="true">background-color:rgba(255,255,255,30);
+border: 1px solid rgba(255, 255, 255, 30);
+border-radius: 7px</string>
+             </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
              </property>
@@ -737,6 +872,9 @@
                   <pointsize>14</pointsize>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color:qlineargradient(spread:reflect, x1:0.518955, y1:0.488, x2:0.501, y2:0, stop:0 rgba(0, 219, 131, 255), stop:0.994318 rgba(59, 115, 255, 255))</string>
+                </property>
                 <property name="text">
                  <string>Анализ</string>
                 </property>
@@ -747,17 +885,14 @@
            </item>
            <item alignment="Qt::AlignHCenter">
             <widget class="QLabel" name="label_town_graph">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>15</height>
-              </size>
-             </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
-               <height>15</height>
+               <height>10</height>
               </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color:rgb(189, 232, 255)</string>
              </property>
              <property name="text">
               <string>Тут будет график</string>
@@ -789,14 +924,17 @@
               <property name="geometry">
                <rect>
                 <x>0</x>
-                <y>-269</y>
-                <width>901</width>
-                <height>870</height>
+                <y>0</y>
+                <width>132</width>
+                <height>862</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_17">
                <item>
                 <widget class="QLabel" name="label_8">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(189, 232, 255)</string>
+                 </property>
                  <property name="text">
                   <string>Температура, цельсии</string>
                  </property>
@@ -857,6 +995,9 @@
                </item>
                <item>
                 <widget class="QLabel" name="label_9">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(189, 232, 255)</string>
+                 </property>
                  <property name="text">
                   <string>Влажность, проценты</string>
                  </property>
@@ -887,7 +1028,7 @@
                    <layout class="QVBoxLayout" name="graph_layout_2"/>
                   </item>
                   <item>
-                   <widget class="QLabel" name="humid_stats">
+                   <widget class="QLabel" name="label_10">
                     <property name="maximumSize">
                      <size>
                       <width>16777215</width>
@@ -937,6 +1078,11 @@
             <font>
              <pointsize>9</pointsize>
             </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color:rgba(255,255,255,30);
+border: 1px solid rgba(255, 255, 255, 30);
+border-radius: 7px</string>
            </property>
            <property name="text">
             <string>Добро пожаловать! В этом приложении все разделы расположены в навигации сверху.</string>
